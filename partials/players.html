@@ -1,0 +1,57 @@
+<div class="buscador">
+	<div class="input-prepend">
+		<span class="add-on"><i class="icon-search"></i></span>
+		<input class="span2" type="text" ng-model="q.nombre" placeholder="Introducir nombre...">
+	</div>
+	<i class="icon-filter" ng-click="show=!show"></i>
+</div>
+<div class="buscador" ng-show="show">
+	<select ng-model="orderField">
+		<option value="coeficiente">General PPP</option>
+ 		<option value="goles">Goles</option>
+        <option value="puntos">Puntos</option>
+        <option value="victorias">Victorias</option>
+        <option value="empates">Empates</option>
+        <option value="derrotas">Derrotas</option>
+        <option value="gf">Goles Favor</option>
+        <option value="gc">Goles Contra</option>
+        <option value="golaverage">Golaverage</option>
+    </select>
+    <select ng-model="orderAscDesc">
+		<option value="true">Descendente</option>
+ 		<option value="false">Ascendente</option>
+    </select>
+</div>
+
+<table class="table table-striped table-condensed">
+	<thead>
+	<tr>
+		<th><img class="icon" ng-src="./img/user.png"></img></th>
+		<th>PPP</th>
+		<th><img class="icon" ng-src="./img/goal.png"></img></th>
+		<th>Puntos</th>
+		<th><img class="icon" ng-src="./img/green.png"></img></th>
+		<th><img class="icon" ng-src="./img/yellow.png"></img></th>
+		<th><img class="icon" ng-src="./img/red.png"></img></th>
+		<th><img class="icon" ng-src="./img/gf.png"></img></th>
+		<th><img class="icon" ng-src="./img/gc.png"></img></th>
+		<th>+/-</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="player in players | filter:q | orderBy:orderField:orderAscDesc">
+			<td class="position-{{$index + 1 < 5}} paga-{{player.paga}}">{{player.nombre}}</td>
+			<td>{{player.coeficiente | number:2}} </td>
+			<td>{{player.goles}} </td>
+			<td>{{player.puntos}} </td>
+			<td>{{player.victorias}} </td>
+			<td>{{player.empates}} </td>
+			<td>{{player.derrotas}} </td>
+			<td>{{player.gf}} </td>
+			<td>{{player.gc}} </td>
+			<td>{{player.golaverage}} </td>
+		</tr>
+	</tbody>
+</table>
+<p class="noResults" ng-show="(players | filter:q).length == 0">No se han encontrado resultados</p>
+<h6 ng-show="(players | filter:q).length > 0">(*) -> puntos por partido</h6>

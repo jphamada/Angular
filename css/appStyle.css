@@ -1,0 +1,35 @@
+th{
+	background: gray;
+}
+
+.buscador{
+	margin-left: 1em;
+}
+
+.icon{
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.noResults{
+	color: red;
+	font-size: 1em;
+}
+
+.position-true{
+	background: green !important;
+	font-size: 1em;
+	color: #fff;
+}
+
+.position-false{
+	background: red !important;
+	font-size: 1em;
+	color: #fff;
+}
+
+.paga-0{
+	background: grey !important;
+	font-size: 1em;
+	color: #fff;
+}

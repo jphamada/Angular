@@ -1,0 +1,20 @@
+<input class="buscador" type="text" ng-model="q" placeholder="Introducir fecha...">
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th><img class="icon" ng-src="./img/calendar.png"></img></th>
+		<th><img class="icon" ng-src="./img/equipo.png"></img></th>
+		<th><img class="icon" ng-src="./img/equipo.png"></img></th>
+		<th><img class="icon" ng-src="./img/goal.png"></img></th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="game in games | filter: q">
+		  <td>{{game.fecha}}</td>
+		  <td>{{game.equipo1}}</td>
+		  <td>{{game.equipo2}}</td>
+		  <td>{{game.goles1}} - {{game.goles2}}</td>
+		</tr>
+	</tbody>
+</table>
+<p class="noResults" ng-show="(games | filter: q).length == 0">No se han encontrado resultados</p>

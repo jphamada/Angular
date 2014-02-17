@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="RantxoApp">
+<head>
+	<title>Rantxo 14 - Futbito App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bs/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bs/bootstrap-responsive.min.css">
+	<link rel="stylesheet" type="text/css" href="css/appStyle.css">
+	<script src="lib/angular.js"></script>
+	<script src="lib/angular-route.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	<script type="text/javascript" src="js/services.js"></script>
+	<!--<script src="lib/bootstrap.js"></script>-->
+	<script src="lib/jquery.js"></script>
+</head>
+<body>
+	<ul class="nav nav-tabs">
+	    <li id="0" class="active"><a href="#/players">Jugadores</a></li>
+	    <li id="1"><a href="#/games">Partidos</a></li>
+    </ul>
+	<ng-view></ng-view>
+</body>
+</html>
